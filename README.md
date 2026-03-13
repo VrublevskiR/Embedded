@@ -22,7 +22,7 @@ uint32_t calculate(uint32_t repeat, uint32_t x, uint32_t y)
 Arguments are passed to the function via registers `R0`, `R1`, and `R2`
 
 ### Build and Run Instructions
-To compile and execute the program, you need to install `qemu-user`. Then, you should execute following commands:
+To compile and execute the program, you need to install `qemu-user` and `binutils-arm-linux-gnueabihf`. Then, you should execute following commands:
 ```bash
 arm-linux-gnueabihf-as calculate.s -o calculate.o
 arm-linux-gnueabihf-ld calculate.o -o calculate
