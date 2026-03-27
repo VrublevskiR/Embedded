@@ -714,7 +714,7 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-// Вызывается таймером каждые 0.5 секунды (при 1 Гц)
+
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
     if (htim->Instance == TIM6) {
@@ -722,14 +722,12 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     }
 }
 
-// Вызывается при нажатии синей кнопки
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
     if (GPIO_Pin == USER_Btn_Pin) {
         current_freq *= 2;
         if (current_freq > 16) current_freq = 1;
 
-        // 10 000 тиков = 1 с. Для частоты N Гц нужен Toggle каждые 10000/(2*N) тиков
         uint32_t new_period = (10000 / (current_freq * 2)) - 1;
         __HAL_TIM_SET_AUTORELOAD(&htim6, new_period);
         __HAL_TIM_SET_COUNTER(&htim6, 0);
