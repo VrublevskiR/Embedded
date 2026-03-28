@@ -8,8 +8,6 @@ This repository contains the completed homework for the Embedded Systems course.
 * 📂 **[Task 2: Blinking LED](./LED_Timer_part_1)** — STM32 LED control with adjustable blinking frequency using a hardware timer (TIM6) and external button interrupts (EXTI).
 * 📂 **[Task 3: Advanced LED & Duty Cycle](./LED_Timer_part_2)** — Advanced STM32 LED control featuring variable frequency and duty cycle modes using a hybrid approach (TIM6 + `HAL_GetTick()` polling).
 
----
-
 ## [Task 1: ARM Assembly in QEMU](./Task%201/calculate.s)
 
 ### Solution Description
